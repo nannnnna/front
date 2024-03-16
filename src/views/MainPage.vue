@@ -1,6 +1,7 @@
 <template>
   <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
     <AppHeader />
+    <FeaturesBlock />
     <div class="main-content">
       <button v-if="button_text">{{ button_text }}</button> 
     </div>
@@ -12,11 +13,14 @@
   <script>
   import axios from 'axios';
   import AppHeader from '@/components/Header.vue';
+  import FeaturesBlock from '@/components/FeaturesBlock.vue';
+
   
   export default {
     name: 'MainPage',
     components: {
-      AppHeader
+      AppHeader,
+      FeaturesBlock,
     },
     data() {
       return {

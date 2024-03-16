@@ -1,6 +1,9 @@
 <template>
   <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
     <AppHeader />
+    <div class="main-content">
+      <button v-if="button_text">{{ button_text }}</button> <!-- Отображаем кнопку -->
+    </div>
   </div>
 </template>
 
@@ -21,6 +24,7 @@
         subHeadline: '',
         menuItems: [],
         backgroundUrl: '',
+        button_text: '',
       };
     },
     created() {
@@ -38,10 +42,9 @@
         axios.get('http://localhost:8000/api/main-page-content/')
           .then(response => {
             const data = response.data;
-            this.headline = data.headline;
-            this.subHeadline = data.sub_headline;
             this.menuItems = response.data.menuItems;
             this.backgroundUrl = `http://localhost:8000${data.background_url}`;
+            this.button_text = data.button_text;
           })
           .catch(error => {
             console.error('Error fetching menu items', error);

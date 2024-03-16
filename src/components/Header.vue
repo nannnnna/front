@@ -1,16 +1,11 @@
 <template>
   <div class="header">
     <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
-    <button
-        class="hamburger"
-        @click="toggleMenu"
-        v-show="isMobile"
-        style="display:block; position: absolute; top: 20px; right: 20px;"
-        >
-        &#9776;
+    <button class="hamburger" @click="toggleMenu" v-if="isMobile">
+      &#9776;
     </button>
 
-    <nav v-show="isMenuOpen || !isMobile">
+    <nav :class="{ 'is-open': isMenuOpen }">
       <ul>
         <li v-for="item in menuItems" :key="item.name">
           <router-link :to="item.url">{{ item.name }}</router-link>
@@ -30,6 +25,7 @@
         menuItems: [],
         logoUrl: '',
         isMenuOpen: false,
+        isMobile: false,
       };
     },
     created() {
@@ -37,8 +33,8 @@
       this.handleResize();
       window.addEventListener('resize', this.handleResize);
     },
-    unmounted() {
-      window.removeEventListener('resize', this.handleResize);
+    beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
     },
     methods: {
       fetchMenuItems() {
@@ -46,7 +42,6 @@
           .then(response => {
             this.menuItems = response.data.menu_items;
             this.logoUrl = response.data.logo_url;
-            console.log(this.logoUrl);
           })
           .catch(error => {
             console.error('Error fetching menu items:', error);
@@ -54,17 +49,14 @@
       },
       toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
-        const navMenu = document.querySelector('nav ul');
-        if (this.isMenuOpen) {
-            navMenu.classList.add('open');
-        } else {
-            navMenu.classList.remove('open');
-        }
-        },
+      },
       handleResize() {
-       this.isMobile = window.innerWidth < 768;
-    }
-    }
+        this.isMobile = window.innerWidth < 768;
+      },
+    },
+    mounted() {
+      this.handleResize();
+  },
   };
 </script>
   
@@ -118,10 +110,8 @@ nav ul li a:hover {
 
 .hamburger {
   display: none;
-  font-size: 2rem;
-  color: #fff;
-  background: none;
-  border: none;
+  cursor: pointer;
+  
 }
 
 @media (max-width: 768px) {
@@ -154,7 +144,7 @@ nav ul li a:hover {
     transition: transform 0.3s ease-in-out;
   }
 
-  nav ul.open {
+  nav.is-open ul {
     transform: translateX(0);
   }
 

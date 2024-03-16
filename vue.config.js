@@ -6,7 +6,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8000', // URL вашего Django сервера
+        target: 'http://localhost:8000',
         ws: true,
         changeOrigin: true
       },

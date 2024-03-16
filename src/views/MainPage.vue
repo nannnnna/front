@@ -2,7 +2,7 @@
   <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
     <AppHeader />
     <div class="main-content">
-      <button v-if="button_text">{{ button_text }}</button> <!-- Отображаем кнопку -->
+      <button v-if="button_text">{{ button_text }}</button> 
     </div>
   </div>
 </template>

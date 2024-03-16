@@ -5,7 +5,7 @@
       &#9776;
     </button>
 
-    <nav :class="{ 'is-open': isMenuOpen }">
+    <nav :class="{ 'is-open': isMenuOpen }" @click.stop>
       <ul>
         <li v-for="item in menuItems" :key="item.name">
           <router-link :to="item.url">{{ item.name }}</router-link>
@@ -49,7 +49,7 @@
       },
       toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
-      },
+    },
       handleResize() {
         this.isMobile = window.innerWidth < 768;
       },

@@ -1,10 +1,6 @@
 <template>
-  <div class="background-wrapper" :style="backgroundStyle">
+  <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
     <AppHeader />
-    <div class="main-content">
-      <h1>{{ headline }}</h1>
-      <p>{{ subHeadline }}</p>
-    </div>
   </div>
 </template>
 
@@ -50,7 +46,12 @@
           .catch(error => {
             console.error('Error fetching menu items', error);
           });
+      },
+      closeMenu(event) {
+        if (this.isMenuOpen && !event.target.closest('.header')) {
+            this.isMenuOpen = false;
       }
+    },
     }
   }
   </script>

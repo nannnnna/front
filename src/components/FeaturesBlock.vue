@@ -40,7 +40,7 @@
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 20px; 
   justify-content: center;
-  padding-left: 50%;
+  padding-left: 55%;
   margin-left: auto;
   margin-right: auto;
 }

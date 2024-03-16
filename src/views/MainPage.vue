@@ -3,7 +3,9 @@
     <AppHeader />
     <FeaturesBlock />
     <div class="main-content">
-      <button v-if="button_text">{{ button_text }}</button> 
+      <div class="button-wrapper">
+        <button class="start-travel-button">{{ button_text }}</button>
+      </div>
     </div>
   </div>
 </template>
@@ -93,5 +95,42 @@
   body {
     overflow: hidden; 
   }
+  .button-wrapper {
+    position: absolute;
+    left: 376px; /* Adjusted based on your Photoshop details */
+    top: 381px;
+    z-index: 11;
+    width: 178px; /* Width of the clickable area */
+    height: 33px; /* Height of the clickable area */
+  }
+
+  .start-travel-button {
+    font-family: "MuseoSansCyrl", sans-serif; /* Ensure you have this font loaded */
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    background-color: rgba(22, 21, 29, 0.502); /* Semi-transparent background */
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent; /* Set border color if needed */
+    padding: 0; /* No padding, size is controlled by wrapper */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* For the hover state of the button */
+  .start-travel-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust hover background color as needed */
+    /* Add any other hover styles you need */
+  }
+
+  .background-wrapper {
+    /* ... existing styles ... */
+    position: relative; /* Needed for absolute positioning of children */
+  }
+  
 </style>
   

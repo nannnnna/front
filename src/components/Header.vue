@@ -146,11 +146,12 @@ nav ul li a:hover {
 
   nav.is-open ul {
     transform: translateX(0);
+    display: block;
   }
 
   nav ul li {
     width: 100%;
-    text-align: right;
+    text-align: left;
     padding: 15px;
   }
 }

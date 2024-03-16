@@ -57,10 +57,10 @@
   
 <style scoped>
   .background-wrapper {
-    min-height: 100vh; /* Ensure the background covers the full viewport height */
-    background-repeat: no-repeat; /* Prevent background from repeating */
-    background-size: cover; /* Cover the entire area of the element */
-    background-attachment: fixed; /* Keep the background fixed in place when scrolling */
+    min-height: 100vh; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,27 +68,22 @@
   }
   
   .main-content {
-    width: 100%; /* Ensure the content does not exceed the width of the viewport */
-    max-height: 100vh; /* Ensure the content does not exceed the height of the viewport */
+    width: 100%; 
+    max-height: 100vh; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    color: white; /* Set text color for visibility against dark background */
-    text-align: center; /* Center text */
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    text-align: center; 
   }
   
-  /* Make sure the AppHeader is positioned correctly and does not have its own background */
- 
-  
-  /* Ensure that the body element has no margin */
   body {
-    margin: 0; /* Remove default margin */
+    margin: 0; 
   }
   
-  /* If you need to ensure that there is no scroll, you might want to hide overflow on the body */
   body {
-    overflow: hidden; /* Hide scroll bars */
+    overflow: hidden; 
   }
 </style>
   

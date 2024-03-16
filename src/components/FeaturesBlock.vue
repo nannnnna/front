@@ -37,20 +37,25 @@
 <style scoped>
 .features-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 20px; 
+  justify-content: flex-end; 
 }
 
 .feature-block {
   background-color: rgba(0, 0, 0, 0.5); 
-  border: 1px solid #fff; 
-  border-radius: 5px; 
+  border: 1px solid #fff;
+  /* border-width: 0px 4px 2px 1px; */
+  border-radius: 5px;
   padding: 20px; 
-  color: #fff; 
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center; 
-  justify-content: center; 
+  justify-content: center;
+  margin-left: 20px;
+  border: none;
+  box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.1);
 }
 
 .feature-title {

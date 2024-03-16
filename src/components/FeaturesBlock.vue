@@ -39,7 +39,8 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 20px; 
-  justify-content: flex-end; 
+  justify-content: flex-start;
+  margin-left: auto;
 }
 
 .feature-block {
@@ -53,8 +54,8 @@
   flex-direction: column;
   align-items: center; 
   justify-content: center;
-  margin-left: 20px;
   border: none;
+  margin-right: 20px;
   box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.1);
 }
 
@@ -78,10 +79,12 @@
   .features-container {
     grid-template-columns: 1fr 1fr; 
     gap: 10px; 
+    margin-left: 0;
   }
 
   .feature-block {
     padding: 10px; 
+    margin-right: 10px;
   }
 }
 

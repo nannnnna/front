@@ -1,7 +1,16 @@
 <template>
   <div class="header">
     <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
-    <nav>
+    <button
+        class="hamburger"
+        @click="toggleMenu"
+        v-show="isMobile"
+        style="display:block; position: absolute; top: 20px; right: 20px;"
+        >
+        &#9776;
+    </button>
+
+    <nav v-show="isMenuOpen || !isMobile">
       <ul>
         <li v-for="item in menuItems" :key="item.name">
           <router-link :to="item.url">{{ item.name }}</router-link>
@@ -20,10 +29,16 @@
       return {
         menuItems: [],
         logoUrl: '',
+        isMenuOpen: false,
       };
     },
     created() {
       this.fetchMenuItems();
+      this.handleResize();
+      window.addEventListener('resize', this.handleResize);
+    },
+    unmounted() {
+      window.removeEventListener('resize', this.handleResize);
     },
     methods: {
       fetchMenuItems() {
@@ -36,7 +51,13 @@
           .catch(error => {
             console.error('Error fetching menu items:', error);
           });
-      }
+      },
+      toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen; // Переключение состояния гамбургер-меню
+    },
+      handleResize() {
+       this.isMobile = window.innerWidth < 768;
+    }
     }
   };
 </script>
@@ -46,7 +67,8 @@
   .header {
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: space-between;
+    background-color: transparent; 
     padding: 10px 20px;
   }
   
@@ -61,6 +83,7 @@
     margin: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   nav ul li {
@@ -72,7 +95,7 @@
   }
   
   nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none; 
     font-size: 16px; 
     font-weight: bold;
@@ -82,19 +105,39 @@
   nav ul li a:hover {
     color: #ccc; 
   }
+  .hamburger {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: black;
+ }
+ .mobile-menu {
+   display: none;
+ }
   
 
   @media (max-width: 768px) {
+    .mobile-menu {
+    display: block;
+    }
     .header {
-      flex-direction: column; 
+      flex-direction: column;  
+      align-items: flex-start;
     }
   
     .logo {
       margin-bottom: 15px;
     }
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
   
     nav ul {
       flex-direction: column; 
+      align-items: flex-start;
+      width: 100%;
     }
   
     nav ul li {

@@ -39,12 +39,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 20px; 
-  justify-content: flex-start;
+  justify-content: center;
+  padding-left: 50%;
   margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-block {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid #fff;
   /* border-width: 0px 4px 2px 1px; */
   border-radius: 5px;
@@ -54,9 +56,7 @@
   flex-direction: column;
   align-items: center; 
   justify-content: center;
-  border: none;
-  margin-right: 20px;
-  box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.2);
 }
 
 .feature-title {

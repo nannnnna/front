@@ -141,6 +141,7 @@
         border: 1px solid rgba(100, 149, 237, 0.8);
         box-sizing: border-box;
   }
+  
   .start-travel-button .corner {
         position: absolute;
         background-color: white;

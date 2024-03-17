@@ -1,27 +1,23 @@
 <template>
-  <div class="header">
-        <div class="figure-2">
-            <span class="corner corner-top-left"></span>
-            <span class="corner corner-top-right"></span>
-            <span class="corner corner-bottom-left"></span>
-            <span class="corner corner-bottom-right"></span>
-        </div>
-            <div class="logo-container">
-                <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
-            </div>
-            <button class="hamburger" @click="toggleMenu" v-if="isMobile">
-            &#9776;
-            </button>
-
-            <nav :class="{ 'is-open': isMenuOpen }" @click.stop>
-            <ul>
-                <li v-for="item in menuItems" :key="item.name" >
-                <router-link :to="item.url">{{ item.name }}</router-link>
-                </li>
-            </ul>
-            </nav>
-  </div>
+    <div class="header">
+      <div class="logo-container">
+          <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
+      </div>
+      <button class="hamburger" @click.stop="toggleMenu" v-if="isMobile">
+          {{ isMenuOpen ? '✕' : '&#9776;' }}
+      </button>
+      <nav :class="{ 'is-open': isMenuOpen }">
+          <ul>
+              <li v-for="item in menuItems" :key="item.name">
+                <div @click="closeMenu">
+                    <router-link :to="item.url">{{ item.name }}</router-link>
+                </div>
+              </li>
+          </ul>
+      </nav>
+    </div>
 </template>
+  
   
 <script>
   import axios from 'axios';
@@ -38,39 +34,48 @@
     },
     created() {
       this.fetchMenuItems();
-      this.handleResize();
-      window.addEventListener('resize', this.handleResize);
-    },
-    beforeUnmount() {
-      window.removeEventListener('resize', this.handleResize);
-    },
-    computed: {
-        currentRoute() {
-            return this.$route.path;
-        }
+      
     },
     methods: {
-      fetchMenuItems() {
-        axios.get('http://localhost:8000/api/main-page-content/') 
-          .then(response => {
-            this.menuItems = response.data.menu_items;
-            this.logoUrl = response.data.logo_url;
-          })
-          .catch(error => {
-            console.error('Error fetching menu items:', error);
-          });
-      },
-      toggleMenu() {
-        this.isMenuOpen = !this.isMenuOpen;
-    },
-      handleResize() {
-        this.isMobile = window.innerWidth < 768;
-      },
+        fetchMenuItems() {
+            axios.get('http://localhost:8000/api/main-page-content/') 
+            .then(response => {
+                this.menuItems = response.data.menu_items;
+                this.logoUrl = response.data.logo_url;
+            })
+            .catch(error => {
+                console.error('Error fetching menu items:', error);
+            });
+        },
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+        closeMenu() {
+            this.isMenuOpen = false;
+        }
     },
     mounted() {
-      this.handleResize();
+        this.isMobile = window.innerWidth < 900;
+        window.addEventListener('resize', () => {
+            this.isMobile = window.innerWidth < 900;
+        });
+        document.addEventListener('click', (event) => {
+            if (!this.$el.contains(event.target) && this.isMenuOpen) {
+                this.closeMenu();
+            }
+        });
   },
-  };
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+    document.removeEventListener('click', this.handleClickOutside);
+    },
+    watch: {
+        '$route'() {
+            this.closeMenu();
+        }
+        }
+};
+
 </script>
   
   
@@ -101,50 +106,50 @@
     }
     .corner {
         position: absolute;
-        width: 20px; /* Ширина линии уголка */
-        height: 20px; /* Высота линии уголка */
+        width: 20px; 
+        height: 20px; 
         background-color: transparent;
     }
 
     .corner::before, .corner::after {
         content: '';
         position: absolute;
-        background-color: white; /* Цвет уголков */
+        background-color: white; 
     }
 
     .corner::before {
-        width: 100%; /* Полная ширина родителя */
-        height: 2px; /* Высота горизонтальной линии */
+        width: 100%; 
+        height: 2px; 
         top: 0;
     }
 
     .corner::after {
-        width: 2px; /* Ширина вертикальной линии */
-        height: 100%; /* Полная высота родителя */
+        width: 2px; 
+        height: 100%;
         left: 0;
     }
 
     .corner-top-left {
-        top: -2px; /* Смещаем наружу от границы */
+        top: -2px;
         left: -2px;
     }
 
     .corner-top-right {
         top: -2px;
         right: -2px;
-        transform: rotate(90deg); /* Поворачиваем уголок */
+        transform: rotate(90deg); 
     }
 
     .corner-bottom-left {
         bottom: -2px;
         left: -2px;
-        transform: rotate(270deg); /* Поворачиваем уголок */
+        transform: rotate(270deg);
     }
 
     .corner-bottom-right {
         bottom: -2px;
         right: -2px;
-        transform: rotate(180deg); /* Поворачиваем уголок */
+        transform: rotate(180deg); 
     }
 
     .logo {
@@ -198,6 +203,7 @@
     .hamburger {
         display: none;
         cursor: pointer;
+        
     }
 
 @media (max-width: 900px) {
@@ -215,6 +221,10 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
   }
 
     nav ul {
@@ -226,6 +236,7 @@
         right: 0;
         width: 100%;
         height: 100vh;
+        display: none;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
   }
@@ -240,7 +251,9 @@
         text-align: left;
         padding: 15px;
   }
+  
 }
+
 </style>
 
   

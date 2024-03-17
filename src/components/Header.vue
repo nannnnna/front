@@ -92,29 +92,6 @@
         background-color: rgba(0, 0, 0, 0);
     }
 
-
-    .logo-wrapper::before,
-    .logo-wrapper::after {
-        content: '';
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        background-color: rgba(22, 21, 29, 0.502);
-    }
-
-    .logo-wrapper::before {
-        bottom: 0;
-        left: 0;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
-        border-left: 2px solid rgba(255, 255, 255, 0.8); 
-    }
-
-    .logo-wrapper::after {
-        top: 0;
-        right: 0;
-        border-top: 2px solid rgba(255, 255, 255, 0.8); 
-        border-right: 2px solid rgba(255, 255, 255, 0.8); 
-    }
     .logo {
         position: relative;
         font-family: "MuseoSansCyrl", sans-serif;
@@ -133,11 +110,34 @@
         margin-left: 200px;
     }
 
-        
+    .logo::before,
+    .logo::after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgba(22, 21, 29, 0.502);
+    }
+
+    .logo::before {
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
+        border-left: 2px solid rgba(255, 255, 255, 0.8); 
+    }
+
+    .logo::after {
+        top: 0;
+        right: 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.8); 
+        border-right: 2px solid rgba(255, 255, 255, 0.8); 
+    }
+
     .logo:hover::before,
     .logo:hover::after {
         border-color: rgba(255, 255, 255, 0.8);
     }
+
 
     nav {
         flex: 1;

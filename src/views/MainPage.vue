@@ -125,6 +125,7 @@
   }
   
   .start-travel-button {
+    position: relative;
     font-family: "MuseoSansCyrl", sans-serif;
     font-size: 16px;
     color: rgb(255, 255, 255);
@@ -137,11 +138,31 @@
     height: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
+    overflow: hidden;
   }
-  
-  .start-travel-button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
+  .start-travel-button::before,
+    .start-travel-button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(22, 21, 29, 0.502); /* Цвет фона кнопки */
+    }
+
+    .start-travel-button::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.8); /* Верхняя рамка */
+    border-left: 2px solid rgba(255, 255, 255, 0.8); /* Левая рамка */
+    }
+
+    .start-travel-button::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8); /* Нижняя рамка */
+    border-right: 2px solid rgba(255, 255, 255, 0.8); /* Правая рамка */
+    }
+
   
   .main-title {
     font-size: 45.621px;

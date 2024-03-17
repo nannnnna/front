@@ -7,7 +7,7 @@
 
     <nav :class="{ 'is-open': isMenuOpen }" @click.stop>
       <ul>
-        <li v-for="item in menuItems" :key="item.name">
+        <li v-for="item in menuItems" :key="item.name" >
           <router-link :to="item.url">{{ item.name }}</router-link>
         </li>
       </ul>
@@ -35,6 +35,11 @@
     },
     beforeUnmount() {
       window.removeEventListener('resize', this.handleResize);
+    },
+    computed: {
+        currentRoute() {
+            return this.$route.path;
+        }
     },
     methods: {
       fetchMenuItems() {
@@ -67,7 +72,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem 2rem; /* Increased padding on the sides */
+  padding: 1rem 2rem;
   width: 100%;
   position: fixed;
   top: 0;
@@ -78,13 +83,13 @@
 
 .logo {
   height: 50px;
-  margin-left: 2rem; /* Increased margin on the left */
+  margin-left: 16rem; 
 }
 
 nav {
-  flex: 1; /* Take up the remaining space in the header */
+  flex: 1;
   display: flex;
-  justify-content: center; /* Center nav horizontally */
+  justify-content: center; 
 }
 
 nav ul {
@@ -92,15 +97,19 @@ nav ul {
   display: flex;
   margin: 0;
   padding: 0;
+  font-size: 20px;
+  font-family: "MuseoSansCyrl";
+  color: rgb(255, 255, 255);
+  line-height: 1.375;
 }
 
 nav ul li {
-    padding: 0 25px;
+  padding: 0 25px;
     
 }
 
 nav ul li a {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -117,11 +126,11 @@ nav ul li a:hover {
 @media (max-width: 900px) {
   .header {
     padding: 10px;
-    justify-content: space-around; /* Adjust spacing on mobile */
+    justify-content: space-around; 
   }
 
   .logo {
-    margin-left: 0; /* Reset margin on mobile */
+    margin-left: 0; 
   }
 
   .hamburger {

@@ -174,11 +174,10 @@
         line-height: 1.2;
         text-align: left;
         position: absolute;
-        left: 50%;
+        left: 446.042px;
         top: 214.954px;
-        transform: translateX(-50%) scale(1.27134410390151);
-        z-index: 14;
-        white-space: nowrap;
+        z-index: 4;
+        transform: matrix(1.27134410390151,0,0,1.27134410390151,0,0);
     }
   
     @media (max-width: 900px) {

@@ -72,7 +72,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: rgba(0, 0, 0, 0.5);
-        padding: 1rem 2rem;
+        padding: 2rem 2rem;
         width: 100%;
         position: fixed;
         top: 0;

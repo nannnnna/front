@@ -56,23 +56,24 @@
 .feature-block {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  
   border-radius: 5px;
 }
 
 
 .feature-title {
-  font-size: 1.5em; 
+  font-size: 0.8em; /* Самый маленький размер */
+  font-weight: normal; /* Убираем жирность */
   margin-bottom: 0.5em;
 }
 
 .feature-value {
-  font-size: 2.5em; 
-  font-weight: bold; 
+  font-size: 2.8em; /* Самый большой размер */
+  font-weight: bold; /* Делаем текст жирным */
 }
 
 .feature-description {
-  font-size: 1em;
+  font-size: 1em; /* Чуть больше, чем title */
+  font-weight: normal; /* Убираем жирность */
   opacity: 0.7;
 }
 

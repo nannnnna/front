@@ -67,101 +67,152 @@
   
   
 <style scoped>
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem 2rem;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  border-bottom: 1px solid #fff;
-}
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1rem 2rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border-bottom: 1px solid #fff;
+    }
 
-.logo {
-  height: 50px;
-  margin-left: 16rem; 
-}
+    .logo-wrapper {
+        position: absolute;
+        left: calc(25% - 100px);
+        top: calc(2/3 * 100vh);
+        transform: translate(-50%, -50%);
+        z-index: 11;
+        width: 200px;
+        height: 50px;
+    }
 
-nav {
-  flex: 1;
-  display: flex;
-  justify-content: center; 
-}
+    .logo {
+        position: relative;
+        font-family: "MuseoSansCyrl", sans-serif;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        text-align: center;
+        border: 1px solid transparent;
+        padding: 0;
+        width: 100%;
+        max-height: 50px;
+        max-width: 300px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        margin-left: 200px;
+    }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  font-family: "MuseoSansCyrl";
-  color: rgb(255, 255, 255);
-  line-height: 1.375;
-}
+        /* Создание рамки для логотипа */
+    .logo::before,
+    .logo::after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgba(22, 21, 29, 0.502);
+    }
 
-nav ul li {
-  padding: 0 25px;
-    
-}
+    .logo::before {
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
+        border-left: 2px solid rgba(255, 255, 255, 0.8); 
+    }
 
-nav ul li a {
-  color: inherit;
-  text-decoration: none;
-}
+    .logo::after {
+        top: 0;
+        right: 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.8); 
+        border-right: 2px solid rgba(255, 255, 255, 0.8); 
+    }
 
-nav ul li a:hover {
-  color: #ccc;
-}
+        
+    .logo:hover::before,
+    .logo:hover::after {
+        border-color: rgba(255, 255, 255, 0.8);
+    }
 
-.hamburger {
-  display: none;
-  cursor: pointer;
-  
-}
+    nav {
+        flex: 1;
+        display: flex;
+        justify-content: center; 
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-family: "MuseoSansCyrl";
+        color: rgb(255, 255, 255);
+        line-height: 1.375;
+    }
+
+    nav ul li {
+        padding: 0 25px;  
+    }
+
+    nav ul li a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        color: #ccc;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+    }
 
 @media (max-width: 900px) {
-  .header {
-    padding: 10px;
-    justify-content: space-around; 
+    .header {
+        padding: 10px;
+        justify-content: space-around; 
   }
 
-  .logo {
-    margin-left: 0; 
+    .logo {
+        margin-left: 0; 
   }
 
-  .hamburger {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
   }
 
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
   }
 
-  nav.is-open ul {
-    transform: translateX(0);
-    display: block;
+    nav.is-open ul {
+        transform: translateX(0);
+        display: block;
   }
 
-  nav ul li {
-    width: 100%;
-    text-align: left;
-    padding: 15px;
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
   }
 }
 </style>

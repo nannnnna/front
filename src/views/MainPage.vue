@@ -71,156 +71,157 @@
 </script>
   
 <style scoped>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
     }
 
-  .features-align-container {
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-    height: 100%;
-    width: 85%;
+    .features-align-container {
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
+        height: 100%;
+        width: 85%;
     }
 
-  .background-wrapper {
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: center center;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: -1; 
+    .background-wrapper {
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0; 
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: center center;
+        position: fixed; 
+        top: 0;
+        left: 0;
+        z-index: -1; 
   }
   
-  .main-content {
-    width: 100%; 
-    height: 100%;
-    max-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    color: white;
-    text-align: center; 
+    .main-content {
+        width: 100%; 
+        height: 100%;
+        max-height: 100vh; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        color: white;
+        text-align: center; 
   }
   
-  .button-wrapper {
-    position: absolute;
-    left: calc(25% - 100px);
-    top: calc(2/3 * 100vh);
-    transform: translate(-50%, -50%);
-    z-index: 11;
-    width: 200px;
-    height: 50px;
+    .button-wrapper {
+        position: absolute;
+        left: calc(25% - 100px);
+        top: calc(2/3 * 100vh);
+        transform: translate(-50%, -50%);
+        z-index: 11;
+        width: 200px;
+        height: 50px;
   }
   
-  .start-travel-button {
-    position: relative;
-    font-family: "MuseoSansCyrl", sans-serif;
-    font-size: 16px;
-    color: rgb(255, 255, 255);
-    line-height: 1.2;
-    text-align: center;
-    background-color: rgba(22, 21, 29, 0.502);
-    border: 1px solid transparent;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
+    .start-travel-button {
+        position: relative;
+        font-family: "MuseoSansCyrl", sans-serif;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        text-align: center;
+        background-color: rgba(22, 21, 29, 0.502);
+        border: 1px solid transparent;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        overflow: hidden;
   }
     .start-travel-button::before,
     .start-travel-button::after {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: rgba(22, 21, 29, 0.502);
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgba(22, 21, 29, 0.502);
     }
 
     .start-travel-button::before {
-    bottom: 0;
-    left: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
-    border-left: 2px solid rgba(255, 255, 255, 0.8); 
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
+        border-left: 2px solid rgba(255, 255, 255, 0.8); 
     }
 
     .start-travel-button::after {
-    top: 0;
-    right: 0;
-    border-top: 2px solid rgba(255, 255, 255, 0.8); /* Верхняя рамка */
-    border-right: 2px solid rgba(255, 255, 255, 0.8); /* Правая рамка */
+        top: 0;
+        right: 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.8); 
+        border-right: 2px solid rgba(255, 255, 255, 0.8); 
+    }
+    .start-travel-button:hover::before,
+    .start-travel-button:hover::after {
+        border-color: rgba(255, 255, 255, 0.8);
+    }  
+    .main-title {
+        font-size: 45.621px;
+        font-family: "MuseoSansCyrl", sans-serif;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-align: left;
+        position: absolute;
+        left: 50%;
+        top: 214.954px;
+        transform: translateX(-50%) scale(1.27134410390151);
+        z-index: 14;
+        white-space: nowrap;
+    }
+  
+    @media (max-width: 900px) {
+        .button-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 120px;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 40px;
+        z-index: 3;
     }
 
+        .start-travel-button {
+            font-size: 14px;
+            padding: 10px 20px;
+            width: auto;
+            height: auto;
+        }
 
-  
-  .main-title {
-    font-size: 45.621px;
-    font-family: "MuseoSansCyrl", sans-serif;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    line-height: 1.2;
-    text-align: left;
-    position: absolute;
-    left: 50%;
-    top: 214.954px;
-    transform: translateX(-50%) scale(1.27134410390151);
-    z-index: 14;
-    white-space: nowrap;
-  }
-  
-  @media (max-width: 900px) {
-    .button-wrapper {
-    position: absolute;
-    left: 50%;
-    top: 120px;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 40px;
-    z-index: 3;
-  }
+        body {
+            overflow: auto;
+            background-attachment: scroll;
+        }
+            .background-wrapper {
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: center center;
+            min-height: 100vh;
+        }
+        .main-content {
+            max-height: none;
+        }
 
-  .start-travel-button {
-    font-size: 14px;
-    padding: 10px 20px;
-    width: auto;
-    height: auto;
-  }
-
-  body {
-    overflow: auto;
-    background-attachment: scroll;
-  }
-    .background-wrapper {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center center;
-    min-height: 100vh;
-   }
-   .main-content {
-    max-height: none;
-  }
-
-  .main-title {
-    font-size: 24px;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: relative;
-    z-index: 2;
-  }
-  }
+        .main-title {
+            font-size: 24px;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            z-index: 2;
+        }
+}
 </style>
 
 

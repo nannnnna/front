@@ -7,7 +7,8 @@
     <div class="main-content">
       <h1 class="main-title">{{ titleText }}</h1>
       <div class="button-wrapper">
-        <button class="start-travel-button">{{ button_text }}</button>
+        <button class="start-travel-button">{{ button_text }}<span class="corner corner-bottom-left"></span>
+    <span class="corner corner-top-right"></span></button>
       </div>
     </div>
   </div>
@@ -131,40 +132,55 @@
         line-height: 1.2;
         text-align: center;
         background-color: rgba(22, 21, 29, 0.502);
-        border: 1px solid transparent;
         padding: 0;
-        width: 100%;
-        height: 100%;
+        width: 100%; 
+        height: 100%; 
         cursor: pointer;
         transition: all 0.3s ease;
         overflow: hidden;
+        border: 1px solid rgba(100, 149, 237, 0.8);
+        box-sizing: border-box;
   }
-    .start-travel-button::before,
-    .start-travel-button::after {
+  .start-travel-button .corner {
+        position: absolute;
+        background-color: white;
+        z-index: 12;
+    }
+
+    .corner-bottom-left {
+        width: 8px;
+        height: 2px;
+        bottom: -1px;
+        left: 0;
+    }
+
+    .corner-bottom-left::before {
         content: '';
         position: absolute;
-        width: 5px;
-        height: 5px;
-        background-color: rgba(22, 21, 29, 0.502);
-    }
-
-    .start-travel-button::before {
+        width: 2px;
+        height: 8px;
         bottom: 0;
-        left: 0;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
-        border-left: 2px solid rgba(255, 255, 255, 0.8); 
+        left: -1px;
+        background-color: white;
     }
 
-    .start-travel-button::after {
-        top: 0;
+    .corner-top-right {
+        width: 8px;
+        height: 2px;
+        top: -1px;
         right: 0;
-        border-top: 2px solid rgba(255, 255, 255, 0.8); 
-        border-right: 2px solid rgba(255, 255, 255, 0.8); 
     }
-    .start-travel-button:hover::before,
-    .start-travel-button:hover::after {
-        border-color: rgba(255, 255, 255, 0.8);
-    }  
+
+    .corner-top-right::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 8px;
+        top: 0;
+        right: -1px;
+        background-color: white;
+    }
+
     .main-title {
         font-size: 45.621px;
         font-family: "MuseoSansCyrl", sans-serif;
@@ -180,13 +196,12 @@
         top: 214.954px;
         z-index: 4;
         transform: matrix(1.27134410390151,0,0,1.27134410390151,0,0);
-        color: white; /* Цвет текста */
-        background-image: linear-gradient(to right, white 0%, red 100%); /* Градиент */
-        -webkit-background-clip: text; /* Применяем градиент только к тексту */
-        background-clip: text; /* Применяем градиент только к тексту */
-        color: transparent; /* Делаем текст прозрачным */
+        color: white; 
+        background-image: linear-gradient(to right, white 0%, red 100%); 
+        -webkit-background-clip: text; 
+        background-clip: text;
+        color: transparent;
     }
-  
   
     @media (max-width: 900px) {
         .button-wrapper {

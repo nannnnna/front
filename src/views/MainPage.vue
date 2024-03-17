@@ -73,21 +73,21 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
     }
 
   .background-wrapper {
-    padding-top: 60px;
-    margin-top: 60px;
-    min-height: 100vh; 
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0; 
     background-repeat: no-repeat; 
     background-size: cover; 
-    /* background-attachment: fixed;  Remove this line */
     background-position: center center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
   }
   
   .main-content {

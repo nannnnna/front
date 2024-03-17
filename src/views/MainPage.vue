@@ -3,6 +3,7 @@
     <AppHeader />
     <FeaturesBlock />
     <div class="main-content">
+      <h1 class="main-title">{{ titleText }}</h1>
       <div class="button-wrapper">
         <button class="start-travel-button">{{ button_text }}</button>
       </div>
@@ -31,6 +32,7 @@
         menuItems: [],
         backgroundUrl: '',
         button_text: '',
+        titleText: '',
       };
     },
     created() {
@@ -51,6 +53,7 @@
             this.menuItems = response.data.menuItems;
             this.backgroundUrl = `http://localhost:8000${data.background_url}`;
             this.button_text = data.button_text;
+            this.titleText = data.title_text;
           })
           .catch(error => {
             console.error('Error fetching menu items', error);
@@ -96,41 +99,60 @@
     overflow: hidden; 
   }
   .button-wrapper {
-    position: absolute;
-    left: 376px; /* Adjusted based on your Photoshop details */
-    top: 381px;
-    z-index: 11;
-    width: 178px; /* Width of the clickable area */
-    height: 33px; /* Height of the clickable area */
-  }
+  position: absolute;
+  left: 376px;
+  top: 381px;
+  z-index: 11;
+  width: 178px;
+  height: 33px;
+}
 
-  .start-travel-button {
-    font-family: "MuseoSansCyrl", sans-serif; /* Ensure you have this font loaded */
-    font-size: 14px;
+.start-travel-button {
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: center; /* Center the text inside the button */
+  background-color: rgba(22, 21, 29, 0.502);
+  border: 1px solid transparent; /* Adjust if a border is needed */
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-travel-button:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the hover background as needed */
+}
+.main-title {
+    font-size: 45.621px;
+    font-family: "MuseoSansCyrl", sans-serif;
     color: rgb(255, 255, 255);
+    text-transform: uppercase;
     line-height: 1.2;
     text-align: left;
-    background-color: rgba(22, 21, 29, 0.502); /* Semi-transparent background */
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent; /* Set border color if needed */
-    padding: 0; /* No padding, size is controlled by wrapper */
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    position: absolute;
+    left: 50%; /* Centers the title */
+    top: 214.954px;
+    transform: translateX(-50%) scale(1.27134410390151); /* Adjusts the horizontal centering and scaling */
+    z-index: 14;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+/* Add responsive considerations for the button */
+@media (max-width: 768px) {
+  .button-wrapper {
+    left: 10%; /* Example of responsive adjustment */
+    width: 50%; /* Example of responsive adjustment */
   }
+  .start-travel-button {
+    font-size: 3vw; /* Example of responsive font size adjustment */
+  }
+}
 
-  /* For the hover state of the button */
-  .start-travel-button:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust hover background color as needed */
-    /* Add any other hover styles you need */
-  }
 
-  .background-wrapper {
-    /* ... existing styles ... */
-    position: relative; /* Needed for absolute positioning of children */
-  }
+
+
   
 </style>
   

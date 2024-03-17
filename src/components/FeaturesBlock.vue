@@ -48,7 +48,7 @@
   width: fit-content;
   max-height: 600px; 
   overflow-y: auto; 
-  margin: 0 20px 0 auto;
+  padding: 20px;
 }
 
 .feature-block {

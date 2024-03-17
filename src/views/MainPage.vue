@@ -79,10 +79,10 @@
     }
   .features-align-container {
     display: flex;
-    justify-content: flex-end; /* Выравниваем содержимое справа */
-    align-items: center; /* Центрирование содержимого по вертикали */
-    height: 100%; /* Полная высота родительского элемента */
-    width: 100%; /* Полная ширина для корректной работы justify-content */
+    justify-content: flex-end; 
+    align-items: center;
+    height: 100%;
+    width: 80%;
     }
 
   .background-wrapper {

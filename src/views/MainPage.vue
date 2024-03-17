@@ -71,9 +71,10 @@
 <style scoped>
   .background-wrapper {
     min-height: 100vh; 
-    background-repeat: no-repeat; 
+    
     background-size: cover; 
     background-attachment: fixed; 
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,6 +83,7 @@
   
   .main-content {
     width: 100%; 
+    height: 100%;
     max-height: 100vh; 
     display: flex;
     flex-direction: column;
@@ -101,22 +103,22 @@
   
   .button-wrapper {
     position: absolute;
-    left: 50%; /* Center horizontally */
-    top: calc(2/3 * 100vh); /* Two-thirds from the top */
-    transform: translate(-50%, -50%); /* Center vertically */
+    left: calc(25% - 100px);
+    top: calc(2/3 * 100vh);
+    transform: translate(-50%, -50%);
     z-index: 11;
-    width: 178px;
-    height: 33px;
+    width: 200px;
+    height: 50px;
   }
   
   .start-travel-button {
     font-family: "MuseoSansCyrl", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(255, 255, 255);
     line-height: 1.2;
-    text-align: center; /* Center the text inside the button */
+    text-align: center;
     background-color: rgba(22, 21, 29, 0.502);
-    border: 1px solid transparent; /* Adjust if a border is needed */
+    border: 1px solid transparent;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -125,7 +127,7 @@
   }
   
   .start-travel-button:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust the hover background as needed */
+    background-color: rgba(255, 255, 255, 0.8);
   }
   
   .main-title {
@@ -136,25 +138,27 @@
     line-height: 1.2;
     text-align: left;
     position: absolute;
-    left: 50%; /* Centers the title */
+    left: 50%;
     top: 214.954px;
-    transform: translateX(-50%) scale(1.27134410390151); /* Adjusts the horizontal centering and scaling */
+    transform: translateX(-50%) scale(1.27134410390151);
     z-index: 14;
-    white-space: nowrap; /* Prevents text wrapping */
+    white-space: nowrap;
   }
   
-  /* Add responsive considerations for the button */
   @media (max-width: 768px) {
     .button-wrapper {
-      left: 10%; /* Example of responsive adjustment */
-      top: calc(2/3 * 100vh); /* Example of responsive adjustment */
-      transform: translate(-10%, -50%); /* Center vertically */
-      width: 50%; /* Example of responsive adjustment */
+      left: 10%;
+      top: calc(2/3 * 100vh);
+      transform: translate(-10%, -50%);
+      width: 50%;
     }
     .start-travel-button {
-      font-size: 3vw; /* Example of responsive font size adjustment */
+      font-size: 3vw;
     }
   }
 </style>
+
+
+
 
   

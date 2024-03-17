@@ -181,10 +181,10 @@
         z-index: 4;
         transform: matrix(1.27134410390151,0,0,1.27134410390151,0,0);
         color: white; /* Цвет текста */
-        background-image: linear-gradient(to right, white 50%, red 50%); /* Градиент */
+        background-image: linear-gradient(to right, white 0%, red 100%); /* Градиент */
         -webkit-background-clip: text; /* Применяем градиент только к тексту */
         background-clip: text; /* Применяем градиент только к тексту */
-        color: transparent;
+        color: transparent; /* Делаем текст прозрачным */
     }
   
   

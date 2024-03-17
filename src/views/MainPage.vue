@@ -69,6 +69,12 @@
 </script>
   
 <style scoped>
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    }
 
   .background-wrapper {
     min-height: 100vh; 
@@ -94,13 +100,6 @@
     text-align: center; 
   }
   
-  body {
-    margin: 0; 
-  }
-  
-  body {
-    overflow: hidden; 
-  }
   
   .button-wrapper {
     position: absolute;

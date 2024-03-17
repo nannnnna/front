@@ -34,7 +34,7 @@
       window.addEventListener('resize', this.handleResize);
     },
     beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+      window.removeEventListener('resize', this.handleResize);
     },
     methods: {
       fetchMenuItems() {
@@ -114,7 +114,7 @@ nav ul li a:hover {
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header {
     padding: 10px;
     justify-content: space-around; /* Adjust spacing on mobile */

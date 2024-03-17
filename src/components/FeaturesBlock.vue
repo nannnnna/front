@@ -37,27 +37,28 @@
 <style scoped>
 .features-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  gap: 20px; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   justify-content: center;
-  padding-left: 55%;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .feature-block {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid #fff;
-  /* border-width: 0px 4px 2px 1px; */
   border-radius: 5px;
-  padding: 20px; 
+  padding: 20px;
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.2);
+  position: relative; /* Needed for absolute positioning of children */
 }
+
 
 .feature-title {
   font-size: 1.5em; 
@@ -75,23 +76,29 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .features-container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .feature-block {
     padding: 10px;
   }
 
   .feature-block {
     margin: 0;
+    padding: 10px;
   }
+  .feature-title {
+    font-size: 1em;
+  }
+
+  .feature-value {
+    font-size: 1.8em;
+  }
+
+  .feature-description {
+    font-size: 0.9em;
+  }
+
+  
 }
 
 

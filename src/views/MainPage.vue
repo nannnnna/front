@@ -147,7 +147,7 @@
     white-space: nowrap;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .button-wrapper {
     position: absolute;
     left: 50%;

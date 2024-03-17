@@ -1,17 +1,25 @@
 <template>
   <div class="header">
-    <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
-    <button class="hamburger" @click="toggleMenu" v-if="isMobile">
-      &#9776;
-    </button>
+        <div class="figure-2">
+            <span class="corner corner-top-left"></span>
+            <span class="corner corner-top-right"></span>
+            <span class="corner corner-bottom-left"></span>
+            <span class="corner corner-bottom-right"></span>
+        </div>
+            <div class="logo-container">
+                <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
+            </div>
+            <button class="hamburger" @click="toggleMenu" v-if="isMobile">
+            &#9776;
+            </button>
 
-    <nav :class="{ 'is-open': isMenuOpen }" @click.stop>
-      <ul>
-        <li v-for="item in menuItems" :key="item.name" >
-          <router-link :to="item.url">{{ item.name }}</router-link>
-        </li>
-      </ul>
-    </nav>
+            <nav :class="{ 'is-open': isMenuOpen }" @click.stop>
+            <ul>
+                <li v-for="item in menuItems" :key="item.name" >
+                <router-link :to="item.url">{{ item.name }}</router-link>
+                </li>
+            </ul>
+            </nav>
   </div>
 </template>
   
@@ -79,17 +87,64 @@
         left: 0;
         z-index: 100;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        position: relative;
+    }
+    .figure-2 {
+        opacity: 0.212;
+        position: absolute;
+        left: 150px;
+        top: 0px;
+        width: 400px;
+        height: 100%;
+        z-index: 44;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+    .corner {
+        position: absolute;
+        width: 20px; /* Ширина линии уголка */
+        height: 20px; /* Высота линии уголка */
+        background-color: transparent;
     }
 
-    .logo-wrapper {
+    .corner::before, .corner::after {
+        content: '';
         position: absolute;
-        left: calc(25% - 100px);
-        top: calc(2/3 * 100vh);
-        transform: translate(-50%, -50%);
-        z-index: 11;
-        width: 200px;
-        height: 50px;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: white; /* Цвет уголков */
+    }
+
+    .corner::before {
+        width: 100%; /* Полная ширина родителя */
+        height: 2px; /* Высота горизонтальной линии */
+        top: 0;
+    }
+
+    .corner::after {
+        width: 2px; /* Ширина вертикальной линии */
+        height: 100%; /* Полная высота родителя */
+        left: 0;
+    }
+
+    .corner-top-left {
+        top: -2px; /* Смещаем наружу от границы */
+        left: -2px;
+    }
+
+    .corner-top-right {
+        top: -2px;
+        right: -2px;
+        transform: rotate(90deg); /* Поворачиваем уголок */
+    }
+
+    .corner-bottom-left {
+        bottom: -2px;
+        left: -2px;
+        transform: rotate(270deg); /* Поворачиваем уголок */
+    }
+
+    .corner-bottom-right {
+        bottom: -2px;
+        right: -2px;
+        transform: rotate(180deg); /* Поворачиваем уголок */
     }
 
     .logo {
@@ -109,35 +164,6 @@
         overflow: hidden;
         margin-left: 200px;
     }
-
-    .logo::before,
-    .logo::after {
-        content: '';
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        background-color: rgba(22, 21, 29, 0.502);
-    }
-
-    .logo::before {
-        bottom: 0;
-        left: 0;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
-        border-left: 2px solid rgba(255, 255, 255, 0.8); 
-    }
-
-    .logo::after {
-        top: 0;
-        right: 0;
-        border-top: 2px solid rgba(255, 255, 255, 0.8); 
-        border-right: 2px solid rgba(255, 255, 255, 0.8); 
-    }
-
-    .logo:hover::before,
-    .logo:hover::after {
-        border-color: rgba(255, 255, 255, 0.8);
-    }
-
 
     nav {
         flex: 1;

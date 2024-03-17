@@ -192,7 +192,7 @@
         text-align: left;
         position: absolute;
         max-width: 500px;
-        left: 446.042px;
+        left: 500px;
         top: 214.954px;
         z-index: 4;
         transform: matrix(1.27134410390151,0,0,1.27134410390151,0,0);

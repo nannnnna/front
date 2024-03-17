@@ -13,7 +13,7 @@
 
 
   
-  <script>
+<script>
   import axios from 'axios';
   import AppHeader from '@/components/Header.vue';
   import FeaturesBlock from '@/components/FeaturesBlock.vue';
@@ -66,7 +66,7 @@
     },
     }
   }
-  </script>
+</script>
   
 <style scoped>
   .background-wrapper {
@@ -98,34 +98,37 @@
   body {
     overflow: hidden; 
   }
+  
   .button-wrapper {
-  position: absolute;
-  left: 376px;
-  top: 381px;
-  z-index: 11;
-  width: 178px;
-  height: 33px;
-}
-
-.start-travel-button {
-  font-family: "MuseoSansCyrl", sans-serif;
-  font-size: 14px;
-  color: rgb(255, 255, 255);
-  line-height: 1.2;
-  text-align: center; /* Center the text inside the button */
-  background-color: rgba(22, 21, 29, 0.502);
-  border: 1px solid transparent; /* Adjust if a border is needed */
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.start-travel-button:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Adjust the hover background as needed */
-}
-.main-title {
+    position: absolute;
+    left: 50%; /* Center horizontally */
+    top: calc(2/3 * 100vh); /* Two-thirds from the top */
+    transform: translate(-50%, -50%); /* Center vertically */
+    z-index: 11;
+    width: 178px;
+    height: 33px;
+  }
+  
+  .start-travel-button {
+    font-family: "MuseoSansCyrl", sans-serif;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: center; /* Center the text inside the button */
+    background-color: rgba(22, 21, 29, 0.502);
+    border: 1px solid transparent; /* Adjust if a border is needed */
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .start-travel-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the hover background as needed */
+  }
+  
+  .main-title {
     font-size: 45.621px;
     font-family: "MuseoSansCyrl", sans-serif;
     color: rgb(255, 255, 255);
@@ -138,21 +141,20 @@
     transform: translateX(-50%) scale(1.27134410390151); /* Adjusts the horizontal centering and scaling */
     z-index: 14;
     white-space: nowrap; /* Prevents text wrapping */
-}
-/* Add responsive considerations for the button */
-@media (max-width: 768px) {
-  .button-wrapper {
-    left: 10%; /* Example of responsive adjustment */
-    width: 50%; /* Example of responsive adjustment */
   }
-  .start-travel-button {
-    font-size: 3vw; /* Example of responsive font size adjustment */
-  }
-}
-
-
-
-
   
+  /* Add responsive considerations for the button */
+  @media (max-width: 768px) {
+    .button-wrapper {
+      left: 10%; /* Example of responsive adjustment */
+      top: calc(2/3 * 100vh); /* Example of responsive adjustment */
+      transform: translate(-10%, -50%); /* Center vertically */
+      width: 50%; /* Example of responsive adjustment */
+    }
+    .start-travel-button {
+      font-size: 3vw; /* Example of responsive font size adjustment */
+    }
+  }
 </style>
+
   

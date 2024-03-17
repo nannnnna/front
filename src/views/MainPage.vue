@@ -71,7 +71,7 @@
 <style scoped>
   .background-wrapper {
     min-height: 100vh; 
-    
+    background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed; 
     background-position: center;

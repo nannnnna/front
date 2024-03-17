@@ -17,8 +17,7 @@
       </nav>
     </div>
 </template>
-  
-  
+ 
 <script>
   import axios from 'axios';
   
@@ -34,7 +33,6 @@
     },
     created() {
       this.fetchMenuItems();
-      
     },
     methods: {
         fetchMenuItems() {
@@ -64,20 +62,19 @@
                 this.closeMenu();
             }
         });
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-    document.removeEventListener('click', this.handleClickOutside);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+        document.removeEventListener('click', this.handleClickOutside);
     },
     watch: {
         '$route'() {
             this.closeMenu();
         }
-        }
-};
-
+    }
+  };
 </script>
-  
+
   
 <style scoped>
     .header {
@@ -206,7 +203,7 @@
         
     }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .header {
         padding: 10px;
         justify-content: space-around; 

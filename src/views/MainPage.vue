@@ -1,27 +1,24 @@
 <template>
-  <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
-    <AppHeader />
-    <div class="features-align-container">
+    <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
+      <AppHeader />
+      <div class="features-align-container">
         <FeaturesBlock />
-    </div>
-    <div class="main-content">
-      <h1 class="main-title">{{ titleText }}</h1>
-      <div class="button-wrapper">
-        <button class="start-travel-button">{{ button_text }}<span class="corner corner-bottom-left"></span>
-    <span class="corner corner-top-right"></span></button>
+      </div>
+      <div class="main-content">
+        <h1 class="main-title">{{ titleText }}</h1>
+        <div class="button-wrapper">
+          <button class="start-travel-button">{{ button_text }}<span class="corner corner-bottom-left"></span>
+            <span class="corner corner-top-right"></span></button>
+        </div>
       </div>
     </div>
-  </div>
 </template>
-
-
   
 <script>
   import axios from 'axios';
   import AppHeader from '@/components/Header.vue';
   import FeaturesBlock from '@/components/FeaturesBlock.vue';
 
-  
   export default {
     name: 'MainPage',
     components: {
@@ -64,12 +61,13 @@
       },
       closeMenu(event) {
         if (this.isMenuOpen && !event.target.closest('.header')) {
-            this.isMenuOpen = false;
-      }
-    },
+          this.isMenuOpen = false;
+        }
+      }, 
     }
   }
 </script>
+
   
 <style scoped>
     html, body {
@@ -208,7 +206,7 @@
         .button-wrapper {
             position: absolute;
             left: 50%;
-            top: 120px;
+            top: calc(50% - 120px);
             transform: translate(-50%, -50%);
             width: 80%;
             height: 40px;
@@ -232,17 +230,21 @@
             background-position: center center;
             min-height: 100vh;
         }
-        .main-content {
-            max-height: none;
-        }
 
         .main-title {
-            font-size: 24px;
-            top: 50px;
+            font-size: 6vw; 
+            position: absolute; 
             left: 50%;
-            transform: translateX(-50%);
-            position: relative;
-            z-index: 2;
+            top: 20%; 
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            color: #FFF; 
+            max-width: 100%;
+            text-shadow: 0px 0px 8px rgba(0,0,0,0.5); 
+            background-image: linear-gradient(to right, white 0%, red 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 }
 </style>

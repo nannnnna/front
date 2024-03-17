@@ -82,7 +82,7 @@
     min-height: 100vh; 
     background-repeat: no-repeat; 
     background-size: cover; 
-    background-attachment: fixed; 
+    /* background-attachment: fixed;  Remove this line */
     background-position: center center;
     display: flex;
     flex-direction: column;

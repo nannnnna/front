@@ -35,12 +35,7 @@
 </script>
   
 <style scoped>
-.display-flex-center {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100vh;
-}
+
 .features-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -54,26 +49,26 @@
 }
 
 .feature-block {
-  padding: 20px;
+  padding: 40px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   border-radius: 5px;
 }
 
 
 .feature-title {
-  font-size: 0.8em; 
+  font-size: 1.5em;
   font-weight: normal; 
   margin-bottom: 0.5em;
   opacity: 0.6;
 }
 
 .feature-value {
-  font-size: 2.8em;
+  font-size: 4em;
   font-weight: bold; 
 }
 
 .feature-description {
-  font-size: 1em; 
+  font-size: 1.7em; 
   font-weight: normal; 
   opacity: 0.8;
 }
@@ -83,11 +78,12 @@
   .features-container {
     grid-template-columns: repeat(2, 1fr);
     padding: 10px;
+    gap: 15px;
   }
 
   .feature-block {
     margin: 0;
-    padding: 10px;
+    padding: 15px;
   }
   .feature-title {
     font-size: 1em;

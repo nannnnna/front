@@ -77,12 +77,13 @@
     padding: 0;
     overflow: hidden;
     }
+
   .features-align-container {
     display: flex;
     justify-content: flex-end; 
     align-items: center;
     height: 100%;
-    width: 80%;
+    width: 85%;
     }
 
   .background-wrapper {
@@ -99,7 +100,6 @@
     top: 0;
     left: 0;
     z-index: -1; 
-    
   }
   
   .main-content {
@@ -113,7 +113,6 @@
     color: white;
     text-align: center; 
   }
-  
   
   .button-wrapper {
     position: absolute;

@@ -110,7 +110,6 @@
         flex-direction: column;
         justify-content: center; 
         align-items: center;
-        color: white;
         text-align: center; 
   }
   
@@ -172,23 +171,32 @@
         color: rgb(255, 255, 255);
         text-transform: uppercase;
         line-height: 1.2;
+        position: relative;
+        margin: 0 auto;
         text-align: left;
         position: absolute;
+        max-width: 500px;
         left: 446.042px;
         top: 214.954px;
         z-index: 4;
         transform: matrix(1.27134410390151,0,0,1.27134410390151,0,0);
+        color: white; /* Цвет текста */
+        background-image: linear-gradient(to right, white 50%, red 50%); /* Градиент */
+        -webkit-background-clip: text; /* Применяем градиент только к тексту */
+        background-clip: text; /* Применяем градиент только к тексту */
+        color: transparent;
     }
+  
   
     @media (max-width: 900px) {
         .button-wrapper {
-        position: absolute;
-        left: 50%;
-        top: 120px;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        height: 40px;
-        z-index: 3;
+            position: absolute;
+            left: 50%;
+            top: 120px;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 40px;
+            z-index: 3;
     }
 
         .start-travel-button {
@@ -202,7 +210,7 @@
             overflow: auto;
             background-attachment: scroll;
         }
-            .background-wrapper {
+        .background-wrapper {
             background-attachment: scroll;
             background-size: cover;
             background-position: center center;

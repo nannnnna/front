@@ -78,7 +78,7 @@
         top: 0;
         left: 0;
         z-index: 100;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .logo-wrapper {

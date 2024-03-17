@@ -69,12 +69,13 @@
 </script>
   
 <style scoped>
+
   .background-wrapper {
     min-height: 100vh; 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed; 
-    background-position: center;
+    background-position: center center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,14 +148,43 @@
   
   @media (max-width: 768px) {
     .button-wrapper {
-      left: 10%;
-      top: calc(2/3 * 100vh);
-      transform: translate(-10%, -50%);
-      width: 50%;
-    }
-    .start-travel-button {
-      font-size: 3vw;
-    }
+    position: absolute;
+    left: 50%; /* Center the button */
+    top: 120px; /* Position below the title */
+    transform: translate(-50%, -50%);
+    width: 80%; /* Make the button wider */
+    height: 40px; /* Adjust the height if necessary */
+    z-index: 3; /* Make sure it's above the background */
+  }
+
+  .start-travel-button {
+    font-size: 14px; /* Adjust the font size for mobile */
+    padding: 10px 20px; /* Add some padding */
+    width: auto; /* Allow the button to size with its content */
+    height: auto; /* Allow the button to size with its content */
+  }
+
+  body {
+    overflow: auto; /* Enable scrolling */
+  }
+    .background-wrapper {
+    background-attachment: scroll; /* Allow the background to scroll with the content */
+    background-size: cover; /* Cover the viewport without stretching */
+    background-position: center center; /* Center the background image */
+    min-height: 100vh; /* Ensure it covers at least the whole viewport */
+   }
+   .main-content {
+    max-height: none; /* Allow the content to define the height */
+  }
+
+  .main-title {
+    font-size: 24px; /* Adjust the font size for mobile */
+    top: 50px; /* Position the title appropriately */
+    left: 50%; /* Keep it centered */
+    transform: translateX(-50%); /* Adjust horizontal centering */
+    position: relative; /* Change position to relative for mobile */
+    z-index: 2; /* Ensure it's above the background but below other content */
+  }
   }
 </style>
 

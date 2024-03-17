@@ -77,16 +77,23 @@
 
 @media (max-width: 768px) {
   .features-container {
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px; 
-    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .feature-block {
-    padding: 10px; 
-    margin-right: 10px;
+    padding: 10px;
+  }
+
+  .feature-block {
+    margin: 0;
   }
 }
+
 
 </style>
   

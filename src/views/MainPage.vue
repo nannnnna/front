@@ -140,28 +140,29 @@
     transition: all 0.3s ease;
     overflow: hidden;
   }
-  .start-travel-button::before,
+    .start-travel-button::before,
     .start-travel-button::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(22, 21, 29, 0.502); /* Цвет фона кнопки */
+    width: 5px;
+    height: 5px;
+    background-color: rgba(22, 21, 29, 0.502);
     }
 
     .start-travel-button::before {
-    top: 0;
+    bottom: 0;
     left: 0;
-    border-top: 2px solid rgba(255, 255, 255, 0.8); /* Верхняя рамка */
-    border-left: 2px solid rgba(255, 255, 255, 0.8); /* Левая рамка */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
+    border-left: 2px solid rgba(255, 255, 255, 0.8); 
     }
 
     .start-travel-button::after {
-    bottom: 0;
+    top: 0;
     right: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.8); /* Нижняя рамка */
+    border-top: 2px solid rgba(255, 255, 255, 0.8); /* Верхняя рамка */
     border-right: 2px solid rgba(255, 255, 255, 0.8); /* Правая рамка */
     }
+
 
   
   .main-title {

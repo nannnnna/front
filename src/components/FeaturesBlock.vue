@@ -61,20 +61,21 @@
 
 
 .feature-title {
-  font-size: 0.8em; /* Самый маленький размер */
-  font-weight: normal; /* Убираем жирность */
+  font-size: 0.8em; 
+  font-weight: normal; 
   margin-bottom: 0.5em;
+  opacity: 0.6;
 }
 
 .feature-value {
-  font-size: 2.8em; /* Самый большой размер */
-  font-weight: bold; /* Делаем текст жирным */
+  font-size: 2.8em;
+  font-weight: bold; 
 }
 
 .feature-description {
-  font-size: 1em; /* Чуть больше, чем title */
-  font-weight: normal; /* Убираем жирность */
-  opacity: 0.7;
+  font-size: 1em; 
+  font-weight: normal; 
+  opacity: 0.8;
 }
 
 
@@ -90,6 +91,7 @@
   }
   .feature-title {
     font-size: 1em;
+    opacity: 0.6;
   }
 
   .feature-value {
@@ -98,6 +100,7 @@
 
   .feature-description {
     font-size: 0.9em;
+    opacity: 0.8;
   }
 
   

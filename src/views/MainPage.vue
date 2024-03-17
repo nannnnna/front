@@ -73,10 +73,12 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scroll */
+    overflow-x: hidden;
     }
 
   .background-wrapper {
+    padding-top: 60px;
+    margin-top: 60px;
     min-height: 100vh; 
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -148,44 +150,46 @@
   @media (max-width: 768px) {
     .button-wrapper {
     position: absolute;
-    left: 50%; /* Center the button */
-    top: 120px; /* Position below the title */
+    left: 50%;
+    top: 120px;
     transform: translate(-50%, -50%);
-    width: 80%; /* Make the button wider */
-    height: 40px; /* Adjust the height if necessary */
-    z-index: 3; /* Make sure it's above the background */
+    width: 80%;
+    height: 40px;
+    z-index: 3;
   }
 
   .start-travel-button {
-    font-size: 14px; /* Adjust the font size for mobile */
-    padding: 10px 20px; /* Add some padding */
-    width: auto; /* Allow the button to size with its content */
-    height: auto; /* Allow the button to size with its content */
+    font-size: 14px;
+    padding: 10px 20px;
+    width: auto;
+    height: auto;
   }
 
   body {
-    overflow: auto; /* Enable scrolling */
+    overflow: auto;
+    background-attachment: scroll;
   }
     .background-wrapper {
-    background-attachment: scroll; /* Allow the background to scroll with the content */
-    background-size: cover; /* Cover the viewport without stretching */
-    background-position: center center; /* Center the background image */
-    min-height: 100vh; /* Ensure it covers at least the whole viewport */
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
    }
    .main-content {
-    max-height: none; /* Allow the content to define the height */
+    max-height: none;
   }
 
   .main-title {
-    font-size: 24px; /* Adjust the font size for mobile */
-    top: 50px; /* Position the title appropriately */
-    left: 50%; /* Keep it centered */
-    transform: translateX(-50%); /* Adjust horizontal centering */
-    position: relative; /* Change position to relative for mobile */
-    z-index: 2; /* Ensure it's above the background but below other content */
+    font-size: 24px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    z-index: 2;
   }
   }
 </style>
+
 
 
 

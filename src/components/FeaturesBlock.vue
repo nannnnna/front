@@ -35,28 +35,28 @@
 </script>
   
 <style scoped>
+.display-flex-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+}
 .features-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: fit-content;
+  max-height: 600px; 
+  overflow-y: auto; 
+  margin: 0 20px 0 auto;
 }
 
 .feature-block {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid #fff;
-  border-radius: 5px;
+  /* width: calc(50% - 10px); 
+  margin-bottom: 20px;  */
   padding: 20px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.2);
-  position: relative; /* Needed for absolute positioning of children */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 

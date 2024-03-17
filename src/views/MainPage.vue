@@ -1,7 +1,9 @@
 <template>
   <div class="background-wrapper" :style="backgroundStyle" @click="closeMenu">
     <AppHeader />
-    <FeaturesBlock />
+    <div class="features-align-container">
+        <FeaturesBlock />
+    </div>
     <div class="main-content">
       <h1 class="main-title">{{ titleText }}</h1>
       <div class="button-wrapper">
@@ -69,16 +71,25 @@
 </script>
   
 <style scoped>
-    html, body {
+  html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
     }
+  .features-align-container {
+    display: flex;
+    justify-content: flex-end; /* Выравниваем содержимое справа */
+    align-items: center; /* Центрирование содержимого по вертикали */
+    height: 100%; /* Полная высота родительского элемента */
+    width: 100%; /* Полная ширина для корректной работы justify-content */
+    }
 
   .background-wrapper {
     height: 100vh;
     width: 100vw;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0; 
     background-repeat: no-repeat; 
@@ -88,6 +99,7 @@
     top: 0;
     left: 0;
     z-index: -1; 
+    
   }
   
   .main-content {

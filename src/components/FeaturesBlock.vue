@@ -49,13 +49,14 @@
   max-height: 600px; 
   overflow-y: auto; 
   padding: 20px;
+  color: white;
+  font-family: "MuseoSansCyrl";
 }
 
 .feature-block {
-  /* width: calc(50% - 10px); 
-  margin-bottom: 20px;  */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  
   border-radius: 5px;
 }
 

@@ -22,7 +22,7 @@
     },
     methods: {
       fetchFeatures() {
-        axios.get('http://localhost:8000/api/features-content/')
+        axios.get('https://apidemo.besi.sh/api/features-content/')
           .then(response => {
             this.features = response.data.features;
           })

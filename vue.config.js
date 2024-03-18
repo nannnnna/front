@@ -4,10 +4,14 @@ module.exports = defineConfig({
 })
 module.exports = {
   devServer: {
+    client: {
+           webSocketURL: 'auto://0.0.0.0:0/ws'
+    },
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
-        ws: true,
+        target: 'https://apidemo.besi.sh',
+        pathRewrite: { '^/api': '' },
+        
         changeOrigin: true
       },
     }

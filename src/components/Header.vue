@@ -1,7 +1,7 @@
 <template>
     <div class="header">
       <div class="logo-container">
-          <img v-if="logoUrl" :src="`http://localhost:8000${logoUrl}`" alt="Logo" class="logo" />
+          <img v-if="logoUrl" :src="`https://apidemo.besi.sh/${logoUrl}`" alt="Logo" class="logo" />
       </div>
       <button class="hamburger" @click.stop="toggleMenu" v-if="isMobile">
           {{ isMenuOpen ? '✕' : '&#9776;' }}
@@ -36,7 +36,7 @@
     },
     methods: {
         fetchMenuItems() {
-            axios.get('http://localhost:8000/api/main-page-content/') 
+            axios.get('https://apidemo.besi.sh/api/main-page-content/') 
             .then(response => {
                 this.menuItems = response.data.menu_items;
                 this.logoUrl = response.data.logo_url;

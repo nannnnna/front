@@ -47,11 +47,11 @@
     },
     methods: {
       fetchMainContent() {
-        axios.get('http://localhost:8000/api/main-page-content/')
+        axios.get('https://apidemo.besi.sh/api/main-page-content/')
           .then(response => {
             const data = response.data;
             this.menuItems = response.data.menuItems;
-            this.backgroundUrl = `http://localhost:8000${data.background_url}`;
+            this.backgroundUrl = `https://apidemo.besi.sh/${data.background_url}`;
             this.button_text = data.button_text;
             this.titleText = data.title_text;
           })
